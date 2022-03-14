@@ -2,82 +2,100 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>ClickSymGame</title>
- <link rel="stylesheet" href="style.css">
- <!-- BOOTSTRAP -->
- <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
- <!-- FONTAWESOME -->
- <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>S trainer</title>
+	<!-- S ICON -->
+	<link rel="shortcut icon" type="image/x-icon" href="icon.jpg" />
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="style.css">
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+	<!-- FONTAWESOME -->
+	<link rel="stylesheet" href="../fontawesome/css/all.min.css">
 </head>
 
 <body>
-	<input type="text" name="" id="dm"/>
- <button class="btnm bg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-gear"></i></button>
- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-   <h5 id="offcanvasRightLabel">Sozlamalar</h5>
-   <button type="button" class="btn-cls btnm" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-circle-xmark"></i></button>
-  </div>
-  <div class="offcanvas-body">
-	<!--SETTING ITEMS-->
-	<ul class="setting-items-ul">
-		<!-- BIG LETTERS -->
-	 <li class="form-check form-switch">
-	  <input class="form-check-input" type="checkbox" role="switch" id="BigLetters">
-	  <label class="form-check-label" for="BigLetters">Bosh harflar <br><small class="text-muted">O'chir.</small></label>
-	 </li>
-	 <!-- SMALL LETTERS -->
-	 <li class="form-check form-switch">
-	  <input class="form-check-input" type="checkbox" role="switch" id="SmallLetters" checked>
-	  <label class="form-check-label" for="SmallLetters">Kichik harflar <br><small class="text-muted">O'chir.</small></label>
-	 </li>
-	 <!-- NUMBERS -->
-	 <li class="form-check form-switch">
-	  <input class="form-check-input" type="checkbox" role="switch" id="Numbers">
-	  <label class="form-check-label" for="Numbers">Raqamlar<br><small class="text-muted">O'chir.</small></label>
-	 </li>
-		<!-- SYMBOLS -->
-			 <li class="form-check form-switch">
-	  <input class="form-check-input" type="checkbox" role="switch" id="Symbols">
-	  <label class="form-check-label" for="Symbols">Turli belgilar<br><small class="text-muted">O'chir.</small></label>
-	 </li>
-		<!-- CYRILLIC LETTERS -->
-	 <li class="form-check form-switch">
-	  <input class="form-check-input" type="checkbox" role="switch" id="CyrillicLetters">
-	  <label class="form-check-label" for="CyrillicLetters">Kril harflari<br><small class="text-muted">O'chir.</small></label>
-	 </li>
-		<!--	LATIN LETTERS -->	 
-		<li class="form-check form-switch">
-	  <input class="form-check-input" type="checkbox" role="switch" id="LatinLetters" checked>
-	  <label class="form-check-label" for="LatinLetters">Lotin harflari<br><small class="text-muted">O'chir.</small></label>
-	 </li>
-	 </ul>
-	<!--/SETTING ITEMS-->
-  </div>
- </div>
- <div class="clr"></div>
- <div class="container-xxl cont">
+	<button class="btnm bg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-gear"></i></button>
+	<h1>S trainer</h1>
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+		<div class="offcanvas-header">
+			<h5 id="offcanvasRightLabel">Sozlamalar</h5>
+			<button type="button" class="btn-cls btnm" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-circle-xmark"></i></button>
+		</div>
+		<div class="offcanvas-body">
+			<!--SETTING ITEMS-->
+			<ul class="setting-items-ul">
+				<!-- BIG LETTERS -->
+				<li class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="BigLetters">
+					<label class="form-check-label" for="BigLetters">Bosh harflar <br><small class="text-muted">O'chir.</small></label>
+				</li>
+				<!-- SMALL LETTERS -->
+				<li class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="SmallLetters" checked>
+					<label class="form-check-label" for="SmallLetters">Kichik harflar <br><small class="text-muted">Yoqil.</small></label>
+				</li>
+				<!-- NUMBERS -->
+				<li class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="Numbers">
+					<label class="form-check-label" for="Numbers">Raqamlar<br><small class="text-muted">O'chir.</small></label>
+				</li>
+				<!-- SYMBOLS -->
+				<li class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="Symbols">
+					<label class="form-check-label" for="Symbols">Turli belgilar<br><small class="text-muted">O'chir.</small></label>
+				</li>
+				<!-- CYRILLIC LETTERS -->
+				<li class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="CyrillicLetters">
+					<label class="form-check-label" for="CyrillicLetters">Kril harflari<br><small class="text-muted">O'chir.</small></label>
+				</li>
+				<!--	LATIN LETTERS -->
+				<li class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="LatinLetters" checked>
+					<label class="form-check-label" for="LatinLetters">Lotin harflari<br><small class="text-muted">Yoqil.</small></label>
+				</li>
+					<li class="accordion-item">
+						<h2 class="accordion-header" id="flush-headingOne">
+							<button class="accordion-button collapsed text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+								Haqida
+							</button>
+						</h2>
+						<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+							<div class="accordion-body">Maxsus klaviatura mashq trinajori. Stamina dasturiga taqlid dastur. <br><span class="text-muted">Yaratuvchi: Mansurbek Ahmedov</span><br><a href="https://primedev.netlify.app" class="link">Yanada ko'proq...</a></div>
+						</div>
+					</li>
+			</ul>
+			<!--/SETTING ITEMS-->
+		</div>
+	</div>
+	<div class="clr"></div>
+	<div>
+		<div id="leftrow">
+		</div>
+		<div id="text" class="column"></div>
+		</input>
+		<div class="btns">
+			<button class="btnm d-none" id="stop"><i class="fa-solid fa-stop"></i></button>
+			<div class="time d-none">
+				<i class="fa-solid fa-clock"></i>
+				<p class="time_body">0:0</p>
+			</div>
+			<button class="btnm" id="start">Boshlash</button>
+		</div>
+	</div>
+	<div class="row">
+		
+	</div>
 
-  <div id="leftrow">
-  </div>
-  <input id="text" type="submit" value="Xush kelibsiz!" class="column">
-  </input>
-  <div class="btns">
-   <input type="button" class="btnm" id="exit" value="Chiqish" />
-   <input type="button" class="btnm" id="start" value="Boshlash" />
-  </div>
- </div>
-
-
- <!--   BOOTSTRAP JS
+	<!--   BOOTSTRAP JS
  -->
- <script src="./bootstrap/js/bootstrap.js"></script>
- <script src="index.js">
-  index.js
- </script>
+	<script src="./bootstrap/js/bootstrap.js"></script>
+	<script src="index.js">
+		index.js
+	</script>
 
 </body>
 
