@@ -2,18 +2,14 @@ const latinLetters = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S"
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const symbols = ["@", "#", "$", "%", "&", "-", "+", "(", ")", "*", "\"", "'", ":", ";", "!", "?", "~", "`", "\\", "{", "}", "[", "]", "=", "×", "÷", ",", "_", "/", ".", " "];
 const cyrillicLetters = ["Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю", "Ё"];
-let alls=0;
-let Time;
 
 //get symbols
 let all = document.querySelectorAll('.form-check-input');
 all.forEach(e => e.addEventListener('click', () => {
 	if (!e.hasAttribute('checked')) {
 		e.setAttribute('checked', '');
-		e.parentElement.querySelector('.text-muted').innerHTML = 'Yoqil.';
 	} else {
 		e.removeAttribute('checked');
-		e.parentElement.querySelector('.text-muted').innerHTML = "O'chir.";
 	}
 }))
 
@@ -47,31 +43,38 @@ const Comision = () => {
 
 //get one symbol
 oneSym = () => {
-	if (allSym[0]) {
+	if(allSym[0]){
 		return allSym[Math.floor(Math.random() * allSym.length)];
-	} else {
-		alert("Kechirasiz hurmatli foydalanuvchi, ushbu operatsiyani amalga oshirib bo'lmaydi. Xatolik yuz berdi.");
-		window.location = '/';
+	}else{
+		alert("Kechirasiz hurmatli foydalanuvchi, ushbu operatsiyani amalga oshirib bo'lmaydi. Xatolik yuz berdi");
+		window.location='/';
 		return '';
 	}
 }
 
 //set sym list one symbol
 updateSym = (symList = []) => {
-	do {
-		symList.push(oneSym());
-	} while (symList.length != (Math.floor(Number(window.innerWidth) / 2) / 20));
-	return symList;
+		do {
+			symList.push(oneSym());
+		} while (symList.length != 15);
+		return symList;
 }
 
 //Dom elements//
 let btnStart = document.querySelector('#start');
-let btnStop = document.querySelector('#stop');
+let btnExit = document.querySelector('#exit');
 let textArea = document.querySelector('#text');
-let timeBody = document.querySelector('.time .time_body');
+
 //OneClicking//
-let click = 0;
+click = 0;
 let seconds = 0;
+btnExit.addEventListener('click', () => {
+	if (click == 0) {
+		document.body.innerHTML = '<h1>:) TUGADI :P </h1>';
+	}
+
+})
+
 document.body.addEventListener('keypress', () => {
 	if (click == 0) {
 		click += 1;
@@ -84,34 +87,19 @@ btnStart.addEventListener('click', (e) => {
 		click += 1;
 		Start()
 	} else if (click == 1) {
-		localStorage.setItem('time', seconds);
+		localStorage.setItem(time, seconds);
 		click += 1;
-		btnStart.innerHTML = '<i class="fa-solid fa-play"></i>';
+		e.target.setAttribute('class', 'btnmh');
 	} else if (click != 0 && click != 1) {
-		seconds = Number(localStorage.getItem('time'));
+		seconds = Number(localStorage.getItem(time));
 		click = 1;
-		btnStart.innerHTML = '<i class="fa-solid fa-pause"></i>';
+		e.target.setAttribute('class', 'btnm');
 		localStorage.clear();
 	}
 });
 
-btnStop.addEventListener('click',()=>{
-	results();
-	True=0;
-	False=0;
-	alls=0;
-	click=0;
-	localStorage.clear();
-	textArea.innerHTML='';
-	timeBody.parentElement.setAttribute('class','d-none');
-	btnStart.innerHTML='Yana boshlash';
-	btnStart.style.color='lime';
-	btnStart.style.borderColor='lime';
-	btnStop.setAttribute('class','d-none');
-	seconds=0;
-})
-
 const Start = () => {
+	let text = '';
 	if (click == 1) {
 		Timer();
 		Rename();
@@ -119,11 +107,9 @@ const Start = () => {
 		Comision();
 		symList = updateSym();
 		symList.map((e) => {
-			let txt = document.createTextNode(e);
-			let p = document.createElement('p');
-			p.append(txt);
-			textArea.appendChild(p);
+			text += e;
 		});
+		textArea.value = text;
 		Continue()
 
 	} else {
@@ -131,37 +117,23 @@ const Start = () => {
 	}
 }
 const Continue = () => {
-	if(alls==200){
-		results();
-	}
 	if (click != 1) {
-		let p = document.createElement('p');
-		let txt = document.createTextNode(oneSym());
-		p.appendChild(txt)
-		textArea.appendChild(p);
-		alls+=1;
+		textArea.value += oneSym();
 	}
 }
 
 const Rename = () => {
-	btnStart.innerHTML = '<i class="fa-solid fa-pause"></i>';
-	btnStart.style.color = 'limegreen';
+	btnStart.value = 'Pauza';
 	btnStart.setAttribute('id', 'pause');
-	btnStop.setAttribute('class', 'btnm d-inline-block');
-	btnStop.style.color = 'crimson';
-	timeBody.parentNode.setAttribute('class', 'time d-inline-block')
+	btnExit.value = "Stop";
+	btnExit.setAttribute('id', 'stop');
 }
+const time = 1;
 const Timer = () => {
 	setInterval(function() {
 		seconds++
-		if (localStorage.getItem('time')) {
-			timeBody.innerHTML = `${Math.floor(Number(localStorage.getItem('time'))/60)}:${Number(localStorage.getItem('time'))%60}`;
-			Time=timeBody.textContent;
-		} else {
-			timeBody.innerHTML = `${Math.floor(seconds/60)}:${seconds%60}`;
-			Time=timeBody.textContent;
-		}
 	}, 1000);
+	return seconds;
 }
 
 
@@ -192,50 +164,11 @@ const Keyboard = () => {
 	}
 }
 
-let True = 0;
-let False = 0;
-document.addEventListener('keypress', (e) => {
-	if (localStorage.getItem('time') != 0) {
-		if (textArea.textContent[-1] == e.code) {
-			True += 1;
-		} else {
-			False += 1;
-		}
-		Continue()
+let Trues=0;
+let Falses=0;
+document.querySelector('input').addEventListener('keypress',(e)=>{
+	alert("event")
+	if (e.code==textArea.value[0]){
+		alert('snnsn')
 	}
 })
-
-
-results=()=>{
-	let div=document.createElement('div')
-	div.setAttribute('class','col-10 col-md-4 col-xl-3');
-	let trueText=document.createTextNode(True+' ta');
-	let trueP=document.createElement('p')
-	trueP.innerText="Tog'ri belgilar:";
-	let trueSpan=document.createElement('span');
-	trueSpan.appendChild(trueText);
-	trueP.appendChild(trueSpan);
-	div.appendChild(trueP);
-	let falseText=document.createTextNode(False+' ta');
-	let falseP=document.createElement('p')
-	falseP.innerText="Notog'ri belgilar:";
-	let falseSpan=document.createElement('span');
-	falseSpan.appendChild(falseText);
-	falseP.appendChild(falseSpan);
-	div.appendChild(falseP);
-	let timeText=document.createTextNode(Time);
-	let timeP=document.createElement('p')
-	timeP.innerText="Vaqt:";
-	let timeSpan=document.createElement('span');
-	timeSpan.appendChild(timeText);
-	timeP.appendChild(timeSpan);
-	div.appendChild(timeP);
-	let allText=document.createTextNode(alls+' ta');
-	let allP=document.createElement('p')
-	allP.innerText="Jami belgilar:";
-	let allSpan=document.createElement('span');
-	allSpan.appendChild(allText);
-	allP.appendChild(allSpan);
-	div.appendChild(allP);
-	document.querySelector('.row').appendChild(div);
-}
