@@ -3,30 +3,67 @@ body{
   padding: 0!important;
   margin: 0!important;
 }
-#dm{
-	width: 40px;
-	height: 40px;
-	outline: none;
-	border: none;
-	color: white;
-}
 h1{
-  text-align: center;
-  color: white;
-  margin-top: 3rem!important;
+	color: white;
+	margin-top: 20px!important;
+	margin-left: 15px;
+	display: inline-block;
+	font-family: sans-serif;
+	font-weight: 100!important;
 }
 
-.cont{
-  width: 100%;
-  display: block;
+.row{
+	margin-top: 2rem!important;
+	padding: 0;
 }
-.container-xxl{
-  padding: 0!important;
+
+.row>div{
+	background-color: white;
+	padding: 15px;
+	margin: auto;
+	margin-top: 2px;
+	display: inline-block;
 }
+.row>div>p{
+	display: block;
+	padding: 0;
+	margin: 5px 0;
+	color: grey;
+	font-family: sans-serif;
+	font-weight: 700;
+	border-bottom: 1px solid grey;
+}
+.row>div>p>span{
+	color: limegreen;
+	float: right;
+}
+
+.accordion-item{
+	background: none!important;
+	border: none!important;
+	display: block;
+	margin: 0!important;
+	padding: 0!important;
+	color: white;
+	border-bottom: 1px solid white;
+}
+.accordion-button{
+	color: #fff!important;
+	font-family: sans-serif;
+	font-weight: 700;
+	background: none!important;
+	padding: 15px 0!important;
+	margin: 0!important;
+	width: 100%!important;
+	display: block!important;
+	border-radius: 3px!important;
+	box-sizing: border-box!important;
+}
+
 .bg{
   float: right;
   margin-right: 0!important;
-  margin-top: 30px!important;
+  margin-top: 15px!important;
   border-top-right-radius: 0!important;
   border-bottom-right-radius: 0!important;
   padding: 10px!important;
@@ -37,7 +74,20 @@ h1{
   clear: both;
 }
 
-
+.time{
+	padding: 5px 10px;
+	background-color: rgba(0, 0, 0, .3);
+	color: white;
+	font-family: monospace;
+	font-weight: 200;
+	font-size: 22px;
+	display: inline-block;
+}
+.time * {
+	display: inline-block;
+	line-height: 0;
+	letter-spacing: 0;
+}
 
 .form-check-input{
 	float: right!important;
@@ -55,6 +105,7 @@ h1{
 	margin-left: 10px;
 	padding: 10px 0!important;
 	border-bottom: 1px solid whitesmoke;
+	list-style: none;
 }
 
 
@@ -63,17 +114,24 @@ h1{
   width: 100%;
   background-color: white;
   height: 32px;
-  margin-top: 4rem;
+  margin: 0;
+  margin-top: 1rem;
   font-family: sans-serif;
   font-weight: 600;
   color: #9203C8;
   text-align: right;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 1.9rem;
-  padding-right: 9px;
   display: block;
   border: none;
   outline: none;
+}
+.column p{
+	display: inline-block;
+	width: 20px;
+	margin: 0;  
+	background: none;
+	text-align: center;
 }
 .offcanvas{
   background: rgba(0, 0, 0, .6)!important;
@@ -90,7 +148,6 @@ h1{
 }
 #leftrow{
   position: absolute;
-  display: inline-block;
   background: rgba(0, 0, 0, .4);
   height: 32px;
   width: 50vw;
@@ -104,7 +161,7 @@ h1{
   
 }
 .btnm{
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-family: sans-serif;
   font-weight: 600;
@@ -123,21 +180,6 @@ h1{
   color: #BA06FF;
 }
 
-.btnmh{
-  padding: 5px;
-  border-radius: 5px;
-  font-family: sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  margin: 0 30px;
-  outline: none;
-  transition: 0.4s;
-  background: whitesmoke;
-  color: #BA06FF;
-  border: 3px solid whitesmoke;
-}
-
-
 
 /* .center:after{
   content: "Xush kelibsiz!"
@@ -149,10 +191,14 @@ h1{
   .btnm:hover{
     cursor: pointer;
   }
+  .bg,h1{
+  	margin-top: 30px!important;
+  	margin-left: 30px!important;
+  	font-weight: 500!important;
+  }
   .column{
-    margin-top: 10rem;
+    margin-top: 4rem;
     height: 55px;
-    font-size: 40px;
     line-height: 3.8rem;
   }
   #leftrow{
@@ -162,6 +208,9 @@ h1{
     font-size: 30px;
     border-width: 6px;
     border-radius: 10px;
+  }
+  .time{
+  	font-size: 40px;
   }
 }
 
