@@ -1,5 +1,5 @@
 body{
-  background: linear-gradient(90deg,#BA06FF,#CC46FF);
+  background-image: url("./bg.jpg");
   padding: 0!important;
   margin: 0!important;
 }
