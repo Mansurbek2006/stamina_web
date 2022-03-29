@@ -242,12 +242,9 @@ const getDeviceType = () => {
 const Keyboard = () => {
 	const device = getDeviceType();
 	if (device == 'mobile') {
-		//open keyboard
+		alert("Kechirasiz ushbu dastur mobil qurilmalarda ishlash uchun mo'ljallanmagan");
 	} else if (device == 'tablet') {
-		const openKey = confirm("Klaviatura ochilmoqda...");
-		if (openKey) {
-			//open keyboard
-		}
+		alert("Iltimos klaviaturani ulang");
 	}
 }
 //keypress event listen
